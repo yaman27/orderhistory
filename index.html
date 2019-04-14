@@ -1,119 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-<script src="https://js.stripe.com/v3/"></script>
-<script src="https://checkout.stripe.com/checkout.js"></script> 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"
-    ></script>
-    <script src="sweetalert2.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      href="https://cdn1.iconfinder.com/data/icons/food-drink-5/32/fast-food-512.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"
-    />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bevan|Bowlby+One+SC|Bree+Serif|Open+Sans"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bevan|Bree+Serif|Open+Sans"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bevan|Open+Sans"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Open+Sans"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Alfa+Slab+One"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Dancing+Script"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Alfa+Slab+One"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Kaushan+Script"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Kalam"
-      rel="stylesheet"
-    />
-    <meta charset="utf-8" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Monoton"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <!--
+<head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/food-drink-5/32/fast-food-512.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bevan|Bowlby+One+SC|Bree+Serif|Open+Sans"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bevan|Bree+Serif|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bevan|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Monoton" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
+  <style type="text/css">
+    html,
+    /* body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    } */
 
-    <title>OrderMyFood-Better Food, Better Mood</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .ipl-progress-indicator.available {
+      opacity: 0;
+    }
+
+    .ipl-progress-indicator {
+      background-color: #f5f5f5;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      opacity: 1;
+      pointer-events: none;
+      -webkit-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+      -moz-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+      transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+      z-index: 9999;
+    }
+
+    .insp-logo-frame {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -webkit-animation: fadein 436ms;
+      -moz-animation: fadein 436ms;
+      animation: fadein 436ms;
+      height: 98%;
+    }
+
+    .insp-logo-frame-img {
+      width: 112px;
+      height: 112px;
+      -webkit-align-self: center;
+      -moz-align-self: center;
+      align-self: center;
+      border-radius: 50%;
+    }
+
+    .ipl-progress-indicator-head {
+      background-color: #c6dafc;
+      height: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ipl-progress-indicator .first-indicator,
+    .ipl-progress-indicator .second-indicator {
+      background-color: #056D8B;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      position: absolute;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      transform-origin: left center;
+      -webkit-transform: scaleX(0);
+      -moz-transform: scaleX(0);
+      transform: scaleX(0);
+    }
+
+    .ipl-progress-indicator .first-indicator {
+      -webkit-animation: first-indicator 2000ms linear infinite;
+      -moz-animation: first-indicator 2000ms linear infinite;
+      animation: first-indicator 2000ms linear infinite;
+    }
+
+    .ipl-progress-indicator .second-indicator {
+      -webkit-animation: second-indicator 2000ms linear infinite;
+      -moz-animation: second-indicator 2000ms linear infinite;
+      animation: second-indicator 2000ms linear infinite;
+    }
+
+    .ipl-progress-indicator .insp-logo {
+      animation: App-logo-spin infinite 20s linear;
+      border-radius: 50%;
+      -webkit-align-self: center;
+      -moz-align-self: center;
+      align-self: center;
+    }
+
+    @keyframes App-logo-spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
+      ;
+    }
+
+    @-moz-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
+      ;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
+      ;
+    }
+
+    @keyframes first-indicator {
+      0% {
+        transform: translate(0%) scaleX(0);
+      }
+
+      25% {
+        transform: translate(0%) scaleX(0.5);
+      }
+
+      50% {
+        transform: translate(25%) scaleX(0.75);
+      }
+
+      75% {
+        transform: translate(100%) scaleX(0);
+      }
+
+      100% {
+        transform: translate(100%) scaleX(0);
+      }
+
+      ;
+    }
+
+    @keyframes second-indicator {
+      0% {
+        transform: translate(0%) scaleX(0);
+      }
+
+      60% {
+        transform: translate(0%) scaleX(0);
+      }
+
+      80% {
+        transform: translate(0%) scaleX(0.6);
+      }
+
+      100% {
+        transform: translate(100%) scaleX(0.1);
+      }
+
+      ;
+    }
+  </style>
+
+  <title>OrderMyFood-Better Food, Better Mood</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div class="ipl-progress-indicator" id="ipl-progress-indicator">
+    <div class="ipl-progress-indicator-head">
+      <div class="first-indicator"></div>
+      <div class="second-indicator"></div>
+    </div>
+    <div class="insp-logo-frame">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 505.304 505.304" style="enable-background:new 0 0 505.304 505.304;"
+        xml:space="preserve">
+        <path style="fill:#E89C25;" d="M252.849,0.59C113.822,0.59,0.788,113.624,0.788,252.651S113.822,504.714,252.85,504.714
+	S504.911,391.68,504.911,252.651C505.305,113.624,392.271,0.59,252.849,0.59z M252.849,347.174
+	c-52.382,0-94.523-42.142-94.523-94.523s42.142-94.523,94.523-94.523s94.523,42.142,94.523,94.523
+	C347.766,305.034,305.231,347.174,252.849,347.174z" />
+        <path style="fill:#CC8921;" d="M276.874,488.96c-143.36,0-259.545-116.185-259.545-259.545c0-44.505,11.028-86.252,30.72-122.486
+	C18.511,147.888,1.181,198.3,1.181,252.651c0,139.028,113.034,252.062,252.062,252.062c54.745,0,105.157-17.329,146.117-46.868
+	C362.732,477.538,320.985,488.96,276.874,488.96z" />
+        <path style="fill:#D69022;" d="M252.849,138.436c-63.015,0-114.215,51.2-114.215,114.215s51.2,114.215,114.215,114.215
+	s114.215-51.2,114.215-114.215S316.258,138.436,252.849,138.436z M252.849,347.174c-52.382,0-94.523-42.142-94.523-94.523
+	s42.142-94.523,94.523-94.523s94.523,42.142,94.523,94.523C347.766,305.034,305.231,347.174,252.849,347.174z" />
+        <path style="fill:#F8BEB6;" d="M503.335,283.766c1.182-10.24,1.969-20.48,1.969-30.72c0-40.566-9.452-78.769-26.782-112.64
+	C437.169,57.697,351.705,0.984,253.243,0.984C114.215,0.984,1.182,114.017,1.182,253.046l0.394,15.36
+	c10.634-0.394,21.662-1.182,31.902-3.151c70.892-12.997,77.588-33.477,133.12-50.018c14.572-33.083,48.049-56.32,86.646-56.32
+	c52.382,0,94.523,42.142,94.523,94.523v2.363C391.089,280.221,487.975,283.372,503.335,283.766z" />
+        <path style="fill:#26A6D1;" d="M105.551,150.645l-30.326,8.271c-5.514,1.575-8.665,7.877-7.089,14.178
+	c1.575,6.302,7.483,10.24,12.997,8.665l30.326-8.271c5.514-1.575,8.665-7.877,7.089-14.178
+	C116.972,153.008,111.065,149.07,105.551,150.645z M434.018,190.424c0-7.089-5.12-12.603-11.815-12.603s-11.815,5.514-11.815,12.603
+	v29.932c0,7.089,5.12,12.603,11.815,12.603s11.815-5.514,11.815-12.603V190.424z" />
+        <path style="fill:#53BCA9;"
+          d="M184.714,65.181c-5.12-3.151-11.422-1.575-14.178,3.545l-14.572,28.751
+	c-2.757,5.12-0.788,12.209,4.332,15.36s11.422,1.575,14.178-3.545l14.572-28.751C191.409,75.421,189.834,68.725,184.714,65.181z" />
+        <path style="fill:#E2574C;" d="M356.825,121.501l28.751-16.542c5.12-3.151,12.209-1.182,15.36,4.332
+	c3.151,5.514,1.182,12.209-3.938,15.36l-28.751,16.542c-5.12,3.151-12.209,1.182-15.36-4.332
+	C349.735,131.348,351.705,124.257,356.825,121.501z" />
+        <path style="fill:#FFFFFF;" d="M288.689,89.993l-26.782-16.935c-4.726-3.151-6.695-9.846-3.938-15.36
+	c2.757-5.514,9.058-7.089,14.178-3.938l26.782,16.935c4.726,3.151,6.695,9.846,3.938,15.36
+	C300.111,91.174,293.809,92.75,288.689,89.993z" />
+        <path style="fill:#DAA7A0;" d="M366.671,263.68c0.394-3.545,0.394-7.089,0.394-11.028c0-63.015-51.2-114.215-114.215-114.215
+	c-52.775,0-97.28,35.84-110.277,84.677c7.089-2.757,14.572-5.514,23.631-8.271c14.572-33.083,48.049-56.32,86.646-56.32
+	c52.382,0,94.523,42.142,94.523,94.523v2.363C353.28,258.165,359.582,261.316,366.671,263.68z M1.575,268.012l18.117-1.182
+	c-1.969-12.209-2.757-24.812-2.757-37.809c0-44.505,11.028-86.252,30.72-122.486c-7.089,10.24-13.785,20.874-19.298,31.902
+	l-0.394,1.182l-3.545,7.483l-0.788,1.575c-3.545,7.483-6.695,15.36-9.452,23.237l-1.182,3.545l-1.969,5.908
+	c-0.394,1.575-0.788,3.151-1.575,5.12l-1.575,5.513l-1.575,6.302c-0.394,1.575-0.788,3.151-1.182,4.332l-1.969,10.634
+	c-0.394,1.182-0.394,2.757-0.394,3.938c-0.394,2.757-0.788,5.12-0.788,7.877l-0.394,4.332c-0.394,2.757-0.394,5.514-0.788,7.877
+	c0,1.182,0,2.363-0.394,3.938L0,253.046c0,3.545,0,6.695,0.394,10.24C1.182,264.467,1.575,266.437,1.575,268.012z" />
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+      </svg>
+
+    </div>
+  </div>
+  <div id="root"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
